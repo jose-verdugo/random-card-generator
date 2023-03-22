@@ -1,1 +1,97 @@
-@import "~bootstrap/dist/css/bootstrap.min.css";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: green;
+}
+
+.wrapper {
+  width: fit-content;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.carta {
+  position: relative;
+  width: 25rem;
+  height: auto;
+  background-color: white;
+  border-radius: 1rem;
+}
+
+.up {
+  width: 8rem;
+  height: 8rem;
+  display: flex;
+  justify-content: center;
+}
+
+.down {
+  width: 8rem;
+  height: 8rem;
+  display: flex;
+  justify-content: center;
+  margin-left: 17rem;
+}
+
+.centro {
+  text-align: center;
+  width: 18rem;
+  height: 18rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.numero-up {
+  font-size: 5rem;
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+}
+.numero-down {
+  font-size: 5rem;
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  transform: rotate(180deg);
+}
+
+.palo-up {
+  font-size: 4rem;
+  /* background-color: azure; */
+  position: absolute;
+  left: 1.5rem;
+  top: 5.5rem;
+}
+.palo-down {
+  font-size: 4rem;
+  /* background-color: chartreuse; */
+  position: absolute;
+  right: 1.5rem;
+  bottom: 5.5rem;
+  transform: rotate(180deg);
+}
+
+.valor {
+  font-size: 10rem;
+}
+
+.next {
+  width: 20rem;
+  font-size: 2.5rem;
+  text-decoration: none;
+  color: white;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background-color: salmon;
+  border-radius: 1rem;
+}
