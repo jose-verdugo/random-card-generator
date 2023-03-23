@@ -1,6 +1,5 @@
 /* eslint-disable */
 import "./style.css";
-
 const palos = ["♦", "♥", "♠", "♣"];
 const valores = [
   "2",
@@ -21,6 +20,10 @@ const btn = document.querySelector(".next");
 const palo = document.querySelectorAll(".palo");
 const valor = document.querySelector(".valor");
 const numero = document.querySelectorAll(".numero");
+const carta = document.querySelector(".carta");
+const alto = document.getElementById("alto");
+const ancho = document.getElementById("ancho");
+const auto = document.querySelector(".auto");
 
 function indiceAleatorio(array) {
   let indice = Math.floor(Math.random() * array.length);
@@ -32,7 +35,6 @@ function generarCarta() {
   let paloAleatorio = indiceAleatorio(palos);
   let valorAleatorio = indiceAleatorio(valores);
   valor.innerHTML = valorAleatorio;
-
   numero.forEach(element => {
     element.innerHTML = valorAleatorio;
     if (paloAleatorio == "♦" || paloAleatorio == "♥") {
@@ -56,10 +58,25 @@ function generarCarta() {
   });
 }
 
-// btn.addEventListener("click", () => {
-//   generarCarta();
-// });
+/*Opción de generar la siguiente carta mediante un click o automáticamente*/
 
-setInterval(() => {
+btn.addEventListener("click", e => {
   generarCarta();
-}, 1000);
+  btn.disabled = true;
+});
+
+auto.addEventListener("click", () => {
+  setInterval(() => {
+    generarCarta();
+  }, 1000);
+});
+
+/*Ajustes de Ancho y Alto*/
+
+ancho.addEventListener("change", () => {
+  carta.style.width = `${ancho.value}px`;
+});
+
+alto.addEventListener("change", () => {
+  carta.style.height = `${alto.value}px`;
+});
